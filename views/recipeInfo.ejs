@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= recipe.title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1><%= recipe.title %></h1>
+    </div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/recipes">Recipes</a>
+    </nav>
+    <h2 class="center">Recipe Details</h2>
+    <div class="section">
+        <div class="recipe-card">
+            <img src="<%= recipe.imageUrl %>" alt="<%= recipe.title %>" />
+            <h3><%= recipe.title %></h3>
+            <p><%= recipe.description %></p>
+            <h4>Ingredients</h4>
+            <ul>
+                <% for (let i = 0; i < recipe.ingredients.length; i++) { %>
+                    <li><%= recipe.ingredients[i] %></li>
+                <% } %>
+            </ul>
+            <h4>Instructions</h4>
+            <ol>
+                <% for (let i = 0; i < recipe.instructions.length; i++) { %>
+                    <li><%= recipe.instructions[i] %></li>
+                <% } %>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

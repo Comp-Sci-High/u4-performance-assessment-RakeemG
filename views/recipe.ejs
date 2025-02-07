@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes Overview</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Recipes Overview</h1>
+    </div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/recipes">Recipes</a>
+    </nav>
+    <ul class="recipe-list">
+        <% for (let i = 0; i < recipes.length; i++) { %>
+            <li class="recipe-item">
+                <h2><%= recipes[i].title %></h2>
+                <p><%= recipes[i].description %></p>
+                <a href="/recipes/<%= i %>">View <%= recipes[i].title %>
+            </li>
+        <% } %>
+    </ul>
+</body>
+</html>
